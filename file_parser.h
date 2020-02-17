@@ -1,7 +1,7 @@
 /*  Jessica Dabu, Nathan Sevilla, Tony Peterson
     cssc0634
     Team Arizona
-    prog3
+    prog1
     CS530, Fall 2016
 */
 
@@ -60,8 +60,8 @@ class file_parser {
         string comment;
         string line;
         string target;
-        string delimiters;
-        bool is_comment;
+        string delimiters = " \t\n";
+        bool is_comment = false;
         struct parse_line{
             string label;
             string opcode;
@@ -75,7 +75,7 @@ class file_parser {
         void reset_data();
         string process_comments(string s);
         string process_quotes(string s);
-        string process_tabs(string s);
+
 };
 
 #endif

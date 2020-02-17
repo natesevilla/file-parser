@@ -1,7 +1,7 @@
 /*  Jessica Dabu, Nathan Sevilla, Tony Peterson
     cssc0634
     Team Arizona
-    prog3
+    prog1
     CS530, Fall 2016
 */
 #include "file_parser.h"
@@ -13,8 +13,6 @@ using namespace std;
     file_parser::file_parser(string s){
         filename = s;
         number_of_lines = 0;
-        delimiters = " \t\n";
-        is_comment = false;
     }
     // destructor
     file_parser::~file_parser(){}
@@ -35,7 +33,7 @@ using namespace std;
 
                 while(!current_line.eof()){     //iterates through current line
                     getline(current_line,target);
-		    target = process_tabs(target);
+
                     target = process_comments(target);
                     if(is_comment == true){
                         string token = target.substr(0);
@@ -53,7 +51,6 @@ using namespace std;
 
                         int index = 0;
                         while(first != -1 || last != -1) {
-
                         token = target.substr(last, first-last);
                         int where = token.find("*");
                         if(where != -1) {
@@ -138,13 +135,6 @@ using namespace std;
         return number_of_lines;
     }
 
-    string file_parser::process_tabs(string s){
-    	if(s == "\t") {
-		s = "*";
-	}
-	return s;
-    }
-
     string file_parser::process_comments(string s) {
         is_comment = false;
         int where = s.find("*");
@@ -193,5 +183,4 @@ using namespace std;
         contents.operand = "";
         contents.comment = "";
     }
-
 

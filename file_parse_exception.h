@@ -1,7 +1,7 @@
 /*  Jessica Dabu, Nathan Sevilla, Tony Peterson
     cssc0634
     Team Arizona
-    prog3
+    prog1
     CS530, Fall 2016
 */
 
@@ -30,5 +30,4 @@ private:
     string message;
 };
 #endif
-
 

@@ -13,4 +13,3 @@ file_parser.o: file_parser.h file_parser.cc file_parse_exception.h
 
 clean:
 	rm -f ${TORM}
-
